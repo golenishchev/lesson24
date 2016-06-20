@@ -7,15 +7,14 @@ public class MessageLoop implements Runnable {
             "Третья строка из массива,"};
 
     public void run() {
-        thread = new Thread (this, "Thread-0");
-        for (int i = 0; i < messagesArray.length; i++) {
+        thread = new Thread(this, "Thread-0");
+        for (String aMessagesArray : messagesArray) {
             try {
                 Thread.sleep(4000);
-            } catch ( InterruptedException e){
-
+            } catch (InterruptedException e) {
+                System.out.println("InterruptedException");
             }
-            System.out.println(thread.getName() +": " + messagesArray[i]);
+            System.out.println(thread.getName() + ": " + aMessagesArray);
         }
     }
 }
- 
